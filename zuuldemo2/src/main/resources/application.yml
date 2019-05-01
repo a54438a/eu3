@@ -1,0 +1,17 @@
+server:
+   port: 10010 #服务端口
+
+spring:
+  application:
+    name: api-gateway #指定服务名
+
+zuul:
+  routes:
+    consumer:
+      path: /com/**
+      serviceid: consumer
+      strip-prefix: false
+  strip-prefix: false
+  ignored-services:
+     - user-service
+     - user-service
